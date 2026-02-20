@@ -69,9 +69,9 @@ export default function About() {
         <h2 className="text-2xl font-bold text-[#c9a84c] mb-6">
           Acknowledgments
         </h2>
-        <ul className="text-[#ccc] leading-relaxed space-y-2">
-          <li>Pietro Santachiara</li>
-          <li>Dr. Nicholas Sabo</li>
+        <ul className="text-[#ccc] leading-relaxed space-y-4">
+          <li><span className="text-[#e8e8e8] font-semibold">Pietro Santachiara</span> for the continued support over the course of this project. Your guidance in choosing a database and forming our visualizations was incredibly insightful. Thank you!</li>
+          <li><span className="text-[#e8e8e8] font-semibold">Dr. Nicholas Sabo</span> for sharing your knowledge and passion for Digital Humanities. Your course gave us helpful tools and skills to succeed in the future. Thank you!</li>
         </ul>
       </section>
     </div>
