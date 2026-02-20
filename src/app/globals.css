@@ -31,3 +31,173 @@ h4 {
   background: var(--gold);
   color: var(--dark);
 }
+
+/* ========== FILM GRAIN OVERLAY ========== */
+.film-grain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+  animation: grain 0.5s steps(1) infinite;
+}
+
+@keyframes grain {
+  0% { transform: translate(0, 0); }
+  10% { transform: translate(-5%, -10%); }
+  20% { transform: translate(-15%, 5%); }
+  30% { transform: translate(7%, -25%); }
+  40% { transform: translate(-5%, 25%); }
+  50% { transform: translate(-15%, 10%); }
+  60% { transform: translate(15%, 0%); }
+  70% { transform: translate(0%, 15%); }
+  80% { transform: translate(3%, 35%); }
+  90% { transform: translate(-10%, 10%); }
+  100% { transform: translate(0, 0); }
+}
+
+/* ========== FILM STRIP SPROCKET HOLES ========== */
+.film-strip-left,
+.film-strip-right {
+  position: fixed;
+  top: 0;
+  width: 32px;
+  height: 100%;
+  z-index: 99;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 20px,
+    rgba(201, 168, 76, 0.08) 20px,
+    rgba(201, 168, 76, 0.08) 40px,
+    transparent 40px,
+    transparent 60px
+  );
+}
+
+.film-strip-left {
+  left: 0;
+  border-right: 1px solid rgba(201, 168, 76, 0.08);
+}
+
+.film-strip-right {
+  right: 0;
+  border-left: 1px solid rgba(201, 168, 76, 0.08);
+}
+
+/* ========== HERO GLOW EFFECTS ========== */
+.hero-glow {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-glow::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(
+    circle,
+    rgba(201, 168, 76, 0.08) 0%,
+    rgba(201, 168, 76, 0.03) 30%,
+    transparent 70%
+  );
+  animation: pulse-glow 6s ease-in-out infinite;
+}
+
+.hero-glow::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(ellipse at 0% 50%, rgba(201, 168, 76, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 100% 50%, rgba(201, 168, 76, 0.06) 0%, transparent 50%);
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+}
+
+/* ========== GOLD TITLE SHIMMER ========== */
+.gold-shimmer {
+  background: linear-gradient(
+    135deg,
+    #c9a84c 0%,
+    #e8d48b 25%,
+    #c9a84c 50%,
+    #e8d48b 75%,
+    #c9a84c 100%
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 8s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ========== CARD STYLES ========== */
+.card {
+  background: #141414;
+  border: 1px solid rgba(201, 168, 76, 0.1);
+  border-top: 2px solid rgba(201, 168, 76, 0.3);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: rgba(201, 168, 76, 0.4);
+  box-shadow: 0 0 20px rgba(201, 168, 76, 0.07), 0 0 60px rgba(201, 168, 76, 0.03);
+  transform: translateY(-2px);
+}
+
+/* ========== BUTTON HOVER GLOW ========== */
+.btn-primary {
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 20px rgba(201, 168, 76, 0.3);
+}
+
+.btn-outline {
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  box-shadow: 0 0 20px rgba(201, 168, 76, 0.15);
+}
+
+/* ========== SUBTLE VIGNETTE ON BODY ========== */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 98;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 50%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+}
