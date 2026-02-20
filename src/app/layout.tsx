@@ -28,6 +28,13 @@ export default function RootLayout({
       <body
         className={`${playfair.variable} ${inter.variable} antialiased`}
       >
+        {/* Film grain overlay */}
+        <div className="film-grain" />
+
+        {/* Film strip edges */}
+        <div className="film-strip-left" />
+        <div className="film-strip-right" />
+
         <nav className="fixed top-0 w-full z-50 bg-[#0a0a0a]/90 backdrop-blur-sm border-b border-[#c9a84c]/20">
           <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
             <Link
@@ -39,19 +46,19 @@ export default function RootLayout({
             <div className="flex gap-8 text-sm tracking-widest uppercase">
               <Link
                 href="/"
-                className="hover:text-[#c9a84c] transition-colors"
+                className="hover:text-[#c9a84c] transition-colors duration-300"
               >
                 Home
               </Link>
               <Link
                 href="/about"
-                className="hover:text-[#c9a84c] transition-colors"
+                className="hover:text-[#c9a84c] transition-colors duration-300"
               >
                 About
               </Link>
               <Link
                 href="/data-critique"
-                className="hover:text-[#c9a84c] transition-colors"
+                className="hover:text-[#c9a84c] transition-colors duration-300"
               >
                 Data Critique
               </Link>
