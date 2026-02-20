@@ -8,7 +8,7 @@ My favorite movie is Mamma Mia!" },
 My favorite movie is Black Swan!" },
     { name: "Shane Hanson", role: "Hello, I am a third year Computer Science and Engineering major. My role in the project is data visualization specialist. I was responsible for ensuring all data visualizations are fine-tuned, readable, and accurate. I also learned how to use data visualization software, namely Tableau.
 My favorite movie is Fargo." },
-    { name: "Kendall Keely", role: "Hello, I am a fourth year Statistics and Data Science Major with a minor in Mathematics. My role in the project is editor, responsible for overseeing the overall "look" of the project to ensure consistent design, readability, and accessibility. 
+    { name: "Kendall Keely", role: "Hello, I am a fourth year Statistics and Data Science Major with a minor in Mathematics. My role in the project is editor, responsible for overseeing the overall look of the project to ensure consistent design, readability, and accessibility. 
 My favorite movie is Shutter Island. " },
     { name: "Erika Yiu", role: "Hi, I am a fourth year Statistics and Data Science major with a minor in Accounting. As a data specialist, I was responsible for cleaning and refining the data set so that it was standardized, usable, and well formatted.
 My favorite movie is Inside Out!" },
