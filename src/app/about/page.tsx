@@ -45,15 +45,15 @@ export default function About() {
         {[
           {
             title: "Sources",
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            text: "Our main dataset, The Movies Dataset, includes data from over 45,000 films, categorized by name, genre, directors, production companies, production countries, cast gender, etc. Our additional sources were selected to attempt to fill any data silences found within the main dataset, and to provide additional context and production patterns within the film industry.",
           },
           {
             title: "Processing",
-            text: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            text: "The dataset was initially already quite clean, but we used Python to do a brief clean, then Excel to visually organize the data in a comprehensible format. To make our visualizations and graphs, we used Tableau, Excel, and Python.",
           },
           {
             title: "Presentation",
-            text: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
+            text: "Our web developer, Seif, is quite familiar with Vercel and coding, so we decided to use Vercel rather than WordPress to create and organize our argument. We chose a dark theme with gold and red accents as a subtle nod to the Oscars color scheme, thematically representing Hollywood and the entertainment industry.",
           },
         ].map((level) => (
           <div
@@ -93,12 +93,10 @@ export default function About() {
         <h2 className="text-2xl font-bold text-[#c9a84c] mb-6">
           Acknowledgments
         </h2>
-        <p className="text-[#ccc] leading-relaxed">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-          ex ea commodo consequat.
-        </p>
+        <ul className="text-[#ccc] leading-relaxed space-y-2">
+          <li>Pietro Santachiara</li>
+          <li>Dr. Nicholas Sabo</li>
+        </ul>
       </section>
     </div>
   );
