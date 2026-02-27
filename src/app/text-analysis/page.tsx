@@ -1,3 +1,5 @@
+import GenreLanguageChart from "./GenreLanguageChart";
+
 export default function TextAnalysis() {
   return (
     <div className="max-w-6xl mx-auto px-6 py-16">
@@ -11,6 +13,10 @@ export default function TextAnalysis() {
           src="https://voyant-tools.org/tool/Cirrus/?visible=250&corpus=7b5af96b06e6109621d7fac901d24ece"
           allowFullScreen
         />
+      </div>
+
+      <div className="mt-12">
+        <GenreLanguageChart />
       </div>
     </div>
   );
