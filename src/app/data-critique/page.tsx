@@ -1,6 +1,6 @@
 export default function DataCritique() {
   return (
-    <div className="max-w-4xl mx-auto px-6 py-16">
+    <div className="max-w-6xl mx-auto px-6 py-16">
       <h1 className="text-5xl font-bold text-[#c9a84c] mb-4">Data Critique</h1>
       <div className="w-16 h-0.5 bg-[#c9a84c] mb-10"></div>
 

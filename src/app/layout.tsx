@@ -15,7 +15,6 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Meta Movies",
-  description: "A Digital Humanities exploration of 45,000+ films",
 };
 
 export default function RootLayout({
@@ -25,9 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${playfair.variable} ${inter.variable} antialiased`}
-      >
+      <body className={`${playfair.variable} ${inter.variable} antialiased`}>
         {/* Film grain overlay */}
         <div className="film-grain" />
 
@@ -61,6 +58,12 @@ export default function RootLayout({
                 className="hover:text-[#c9a84c] transition-colors duration-300"
               >
                 Data Critique
+              </Link>
+              <Link
+                href="/text-analysis"
+                className="hover:text-[#c9a84c] transition-colors duration-300"
+              >
+                Text Analysis
               </Link>
             </div>
           </div>

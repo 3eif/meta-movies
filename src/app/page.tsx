@@ -7,13 +7,10 @@ export default function Home() {
         <div className="hero-glow" />
 
         <div className="max-w-3xl relative z-10">
-          <p className="text-[#c9a84c]/70 uppercase tracking-[0.4em] text-xs mb-8">
-            A Digital Humanities Project
-          </p>
           <h1 className="text-7xl md:text-8xl font-bold mb-6 leading-tight gold-shimmer">
             Meta Movies
           </h1>
-          <p className="text-lg text-[#777] leading-relaxed max-w-xl mx-auto italic font-[family-name:var(--font-playfair)]">
+          <p className="text-lg text-[#aaa] leading-relaxed max-w-xl mx-auto italic font-[family-name:var(--font-playfair)]">
             Exploring the patterns, power structures, and cultural forces behind
             45,000+ films through data-driven analysis.
           </p>
@@ -35,7 +32,7 @@ export default function Home() {
       </section>
 
       {/* Stats */}
-      <section className="max-w-5xl mx-auto px-6 py-20">
+      <section className="max-w-6xl mx-auto px-6 py-20">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {[
             { number: "45,000+", label: "Films Analyzed" },
@@ -44,10 +41,8 @@ export default function Home() {
             { number: "1874–2017", label: "Year Range" },
           ].map((stat) => (
             <div key={stat.label} className="card p-6 text-center">
-              <p className="text-3xl font-bold text-[#c9a84c]">
-                {stat.number}
-              </p>
-              <p className="text-xs text-[#666] mt-2 uppercase tracking-wider">
+              <p className="text-3xl font-bold text-[#c9a84c]">{stat.number}</p>
+              <p className="text-xs text-[#888] mt-2 uppercase tracking-wider">
                 {stat.label}
               </p>
             </div>
@@ -56,13 +51,13 @@ export default function Home() {
       </section>
 
       {/* Divider */}
-      <div className="max-w-5xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6">
         <div className="h-px bg-gradient-to-r from-transparent via-[#c9a84c]/20 to-transparent" />
       </div>
 
       {/* Research Questions */}
-      <section className="max-w-5xl mx-auto px-6 py-20">
-        <p className="text-[#c9a84c]/60 uppercase tracking-[0.3em] text-xs text-center mb-3">
+      <section className="max-w-6xl mx-auto px-6 py-20">
+        <p className="text-[#c9a84c]/80 uppercase tracking-[0.3em] text-xs text-center mb-3">
           What We Investigate
         </p>
         <h2 className="text-3xl font-bold text-[#c9a84c] mb-12 text-center">
