@@ -84,7 +84,7 @@ export default function Home() {
             },
           ].map((item, i) => (
             <div key={i} className="card p-6">
-              <p className="text-[#c9a84c]/50 text-4xl font-bold font-[family-name:var(--font-playfair)] mb-4">
+              <p className="text-[#c9a84c]/75 text-4xl font-bold font-[family-name:var(--font-playfair)] mb-4">
                 {item.icon}
               </p>
               <p className="text-[#ccc] leading-relaxed text-sm">{item.q}</p>
