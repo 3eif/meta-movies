@@ -10,10 +10,6 @@ export default function Home() {
           <h1 className="text-7xl md:text-8xl font-bold mb-6 leading-tight gold-shimmer">
             Meta Movies
           </h1>
-          <p className="text-lg text-[#aaa] leading-relaxed max-w-xl mx-auto italic font-[family-name:var(--font-playfair)]">
-            Exploring the patterns, power structures, and cultural forces behind
-            45,000+ films through data-driven analysis.
-          </p>
           <div className="mt-12 flex gap-5 justify-center">
             <a
               href="/about"

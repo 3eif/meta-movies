@@ -1,3 +1,4 @@
+import Link from "next/link";
 import TeamSection from "./TeamSection";
 
 export default function About() {
@@ -6,43 +7,100 @@ export default function About() {
       <h1 className="text-5xl font-bold text-[#c9a84c] mb-4">About</h1>
       <div className="w-16 h-0.5 bg-[#c9a84c] mb-10"></div>
 
-      {/* Sources, Processing, Presentation */}
       <section className="mb-16">
         <h2 className="text-2xl font-bold text-[#c9a84c] mb-6">
           Project Levels
         </h2>
-        {[
-          {
-            title: "Sources",
-            text: "Our main dataset, The Movies Dataset, includes data from over 45,000 films, categorized by name, genre, directors, production companies, production countries, cast gender, etc. Our additional sources were selected to attempt to fill any data silences found within the main dataset, and to provide additional context and production patterns within the film industry.",
-          },
-          {
-            title: "Processing",
-            text: "The dataset was initially already quite clean, but we used Python to do a brief clean, then Excel to visually organize the data in a comprehensible format. To make our visualizations and graphs, we used Tableau, Excel, and Python.",
-          },
-          {
-            title: "Presentation",
-            text: "Our web developer, Seif, is quite familiar with Vercel and coding, so we decided to use Vercel rather than WordPress to create and organize our argument. We chose a dark theme with gold and red accents as a subtle nod to the Oscars color scheme, thematically representing Hollywood and the entertainment industry.",
-          },
-        ].map((level) => (
-          <div
-            key={level.title}
-            className="bg-[#141414] border border-[#c9a84c]/10 p-6 mb-4"
-          >
-            <h3 className="text-lg font-bold text-[#c9a84c] mb-3">
-              {level.title}
-            </h3>
-            <p className="text-[#ccc] leading-relaxed text-sm">
-              {level.text}
+        <div className="pb-8 mb-8 border-b border-[#c9a84c]/10">
+          <h3 className="text-lg font-bold text-[#c9a84c] mb-3">
+            Selecting Sources
+          </h3>
+          <div className="space-y-4 text-[#ccc] leading-relaxed text-sm">
+            <p>
+              Our main dataset, The Movies Dataset, includes data from over
+              45,000 films, categorized by name, genre, directors, production
+              companies, production countries, language, cast and crew gender,
+              revenue, budget, and audience ratings. This dataset was selected
+              because of its breadth of information that provides insight into
+              patterns of genre, global distribution, and revenue. However, we
+              also recognized that the dataset reflects existing global power
+              structures, particularly the dominance of Western and
+              English-language film industries, creating silences in the
+              representation of the global industry. More information about our
+              dataset and its limitations can be found in our{" "}
+              <Link
+                href="/data-critique"
+                className="text-[#c9a84c] hover:text-[#e8d48b] underline underline-offset-4"
+              >
+                data critique
+              </Link>
+              .
+            </p>
+            <p>
+              To address these limitations, we used peer-reviewed scholarly
+              sources on global cinema and systems of production. These
+              secondary sources were selected to contextualize patterns observed
+              in the dataset, specifically the concentration of film production
+              in the United States and Western Europe. This gave us insight into
+              how historical, economic, and political factors have shaped the
+              film industry throughout history into the present. This approach
+              follows Michel-Rolph Trouillot&rsquo;s ideas in Silencing the Past
+              (1995), which emphasizes how power influences what becomes visible
+              in data and historical narratives. More information on the
+              secondary sources we used to supplement our data can be found in
+              our{" "}
+              <Link
+                href="/bibliography"
+                className="text-[#c9a84c] hover:text-[#e8d48b] underline underline-offset-4"
+              >
+                annotated bibliography
+              </Link>
+              .
             </p>
           </div>
-        ))}
+        </div>
+
+        <div className="pb-8 mb-8 border-b border-[#c9a84c]/10">
+          <h3 className="text-lg font-bold text-[#c9a84c] mb-3">
+            Data Processing
+          </h3>
+          <p className="text-[#ccc] leading-relaxed text-sm">
+            The dataset was initially already quite clean, but we used Python
+            to do a brief clean, then Excel to visually organize the data in a
+            comprehensible format. To make our visualizations and graphs, we
+            used Tableau, Excel, and Python. We chose these tools because of
+            our team members&rsquo; familiarity using them as well as knowledge
+            gained from Professor Sabo during course lectures. The types of
+            visualizations we chose were dependent on the data being studied.
+            Factors such as qualitative or quantitative, and range of values
+            helped us determine what types of graphs or charts we created. To
+            create a text analysis of key terms used in film descriptions we
+            used Voyant. Finally, we used Timeline.js to create our timeline of
+            important historical events that have shaped the film industry into
+            what it is today.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-bold text-[#c9a84c] mb-3">
+            Narrative Presentation
+          </h3>
+          <p className="text-[#ccc] leading-relaxed text-sm">
+            Our web developer, Seif, is quite familiar with Vercel and coding,
+            so we decided to use Vercel rather than WordPress to create and
+            organize our argument. We chose a dark theme with gold and red
+            accents as a subtle nod to the Oscars color scheme, thematically
+            representing Hollywood and the entertainment industry. We included
+            hyperlinks to previous and next pages as well as to any sections
+            mentioned throughout the project. Our headlines and subtext are
+            included for clarity and written in easily legible fonts for
+            accessibility.
+          </p>
+        </div>
       </section>
 
-      {/* Team */}
       <TeamSection />
 
-      {/* Acknowledgments */}
       <section>
         <h2 className="text-2xl font-bold text-[#c9a84c] mb-6">
           Acknowledgments

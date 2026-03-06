@@ -54,16 +54,22 @@ export default function RootLayout({
                 About
               </Link>
               <Link
+                href="/analysis"
+                className="hover:text-[#c9a84c] transition-colors duration-300"
+              >
+                Analysis
+              </Link>
+              <Link
                 href="/data-critique"
                 className="hover:text-[#c9a84c] transition-colors duration-300"
               >
                 Data Critique
               </Link>
               <Link
-                href="/text-analysis"
+                href="/bibliography"
                 className="hover:text-[#c9a84c] transition-colors duration-300"
               >
-                Text Analysis
+                Bibliography
               </Link>
             </div>
           </div>
