@@ -1,4 +1,7 @@
+import Image from "next/image";
 import GenreLanguageChart from "../text-analysis/GenreLanguageChart";
+import LanguageProductionLineChart from "./LanguageProductionLineChart";
+import TableauMapEmbed from "./TableauMapEmbed";
 
 export default function AnalysisPage() {
   return (
@@ -219,6 +222,55 @@ export default function AnalysisPage() {
 
       <section className="mb-16">
         <h2 className="text-3xl font-bold text-[#c9a84c] mb-4">
+          Non-English Film Production Over Time
+        </h2>
+        <p className="text-[#999] text-sm leading-relaxed mb-6">
+          [add transition from genre distribution to how non-English production
+          changes over time]
+        </p>
+
+        <div className="mb-6">
+          <LanguageProductionLineChart />
+        </div>
+
+        <div className="space-y-4 text-[#ccc] leading-relaxed">
+          <p className="text-[#999]">
+            [add paragraph describing which languages grow most sharply over
+            time, where major spikes appear, and what that suggests about global
+            film production beyond English-language markets]
+          </p>
+        </div>
+      </section>
+
+      <section className="mb-16">
+        <h2 className="text-3xl font-bold text-[#c9a84c] mb-4">
+          Ratings and Revenue by Decade
+        </h2>
+        <p className="text-[#999] text-sm leading-relaxed mb-6">
+          [add transition into how the relationship between ratings and revenue
+          changes over time]
+        </p>
+
+        <div className="mb-6">
+          <Image
+            src="/charts/ratings-revenue-correlation.png"
+            alt="Line and bubble chart showing Pearson correlation between vote average and log revenue by decade, with larger circles representing more films."
+            width={2536}
+            height={1572}
+            unoptimized
+            className="w-full h-auto rounded-lg"
+          />
+        </div>
+
+        <p className="text-[#999] leading-relaxed">
+          [add paragraph explaining whether higher ratings become less predictive
+          of revenue in later decades and what that suggests about studio
+          strategy, marketing, and audience behavior]
+        </p>
+      </section>
+
+      <section className="mb-16">
+        <h2 className="text-3xl font-bold text-[#c9a84c] mb-4">
           Geographic Patterns of Film Production
         </h2>
         <p className="text-[#999] text-sm leading-relaxed mb-6">
@@ -226,19 +278,12 @@ export default function AnalysisPage() {
           necessary for understanding power in global film production]
         </p>
 
-        <div className="card p-8 mb-6">
-          <div className="border border-dashed border-[#c9a84c]/30 rounded-lg px-6 py-14 text-center">
-            <p className="text-[#c9a84c] uppercase tracking-[0.25em] text-xs mb-3">
-              Map Placeholder
-            </p>
-            <p className="text-[#ccc] leading-relaxed">
-              [embed film production map here]
-            </p>
-            <p className="text-[#999] text-sm mt-3 leading-relaxed">
-              [add caption/source credit for the map and a short alt-text style
-              description]
-            </p>
-          </div>
+        <div className="bg-white rounded-lg p-4 md:p-6 mb-6 overflow-hidden">
+          <TableauMapEmbed />
+          <p className="text-[#666] text-sm mt-4 leading-relaxed">
+            [add caption/source credit for the map and a short alt-text style
+            description]
+          </p>
         </div>
 
         <p className="text-[#999] leading-relaxed">

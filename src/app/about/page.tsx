@@ -65,19 +65,18 @@ export default function About() {
             Data Processing
           </h3>
           <p className="text-[#ccc] leading-relaxed text-sm">
-            The dataset was initially already quite clean, but we used Python
-            to do a brief clean, then Excel to visually organize the data in a
-            comprehensible format. To make our visualizations and graphs, we
-            used Tableau, Excel, and Python. We chose these tools because of
-            our team members&rsquo; familiarity using them as well as knowledge
-            gained from Professor Sabo during course lectures. The types of
-            visualizations we chose were dependent on the data being studied.
-            Factors such as qualitative or quantitative, and range of values
-            helped us determine what types of graphs or charts we created. To
-            create a text analysis of key terms used in film descriptions we
-            used Voyant. Finally, we used Timeline.js to create our timeline of
-            important historical events that have shaped the film industry into
-            what it is today.
+            The dataset was initially already quite clean, but we used R to do a
+            brief clean and to visually organize the data in a comprehensible
+            format. To make our visualizations and graphs, we used Tableau,
+            Excel, and Python. We chose these tools because of our team members’
+            familiarity using them as well as knowledge gained from Professor
+            Sabo during course lectures. The types of visualizations we chose
+            were dependent on the data being studied. Factors such as
+            qualitative or quantitative, and range of values helped us determine
+            what types of graphs or charts we created. To create a text analysis
+            of key terms used in film descriptions we used Voyant. Finally, we
+            used Timeline.js to create our timeline of important historical
+            events that have shaped the film industry into what it is today.
           </p>
         </div>
 
