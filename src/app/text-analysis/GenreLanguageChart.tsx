@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import {
   Bar,
   BarChart,
@@ -14,7 +15,6 @@ type LanguageKey = "de" | "en" | "es" | "fr" | "it" | "ja" | "Other";
 type TooltipPayloadEntry = {
   dataKey?: string;
   value?: number | string;
-  payload?: { total?: number };
 };
 
 // These values are derived from the same movies_cleaned.csv pipeline used in the R/ggplot code.
@@ -54,12 +54,17 @@ const COLORS: Record<LanguageKey, string> = {
   Other: "#FB61D7",
 };
 
-const formatPercent = (value: number) => `${(value * 100).toFixed(1)}%`;
+const LANGUAGE_LABELS: Record<LanguageKey, string> = {
+  de: "German",
+  en: "English",
+  es: "Spanish",
+  fr: "French",
+  it: "Italian",
+  ja: "Japanese",
+  Other: "Other",
+};
 
-const dataWithTotals = data.map((entry) => ({
-  ...entry,
-  total: LEGEND_ORDER.reduce((sum, language) => sum + entry[language], 0),
-}));
+const formatPercent = (value: number) => `${(value * 100).toFixed(1)}%`;
 
 function CustomTooltip({
   active,
@@ -74,11 +79,9 @@ function CustomTooltip({
     return null;
   }
 
-  const total = Number(payload[0]?.payload?.total ?? 0);
-
   return (
-    <div className="border border-gray-300 bg-white px-3 py-2 text-sm shadow-md">
-      <p className="mb-1 font-medium text-black">{label}</p>
+    <div className="rounded-lg border border-gray-200 bg-white px-3 py-3 text-sm shadow-lg">
+      <p className="mb-2 font-medium text-gray-900">{label}</p>
       <div className="space-y-1">
         {LEGEND_ORDER.map((language) => {
           const entry = payload.find(
@@ -89,13 +92,19 @@ function CustomTooltip({
             return null;
           }
 
-          const share = total === 0 ? 0 : Number(entry.value ?? 0) / total;
-
           return (
-            <div key={language} className="flex items-center justify-between gap-4">
-              <span style={{ color: COLORS[language] }}>{language}</span>
-              <span className="tabular-nums text-gray-800">
-                {formatPercent(share)}
+            <div
+              key={language}
+              className="flex items-center justify-between gap-4"
+            >
+              <span
+                className="font-medium"
+                style={{ color: COLORS[language] }}
+              >
+                {LANGUAGE_LABELS[language]}
+              </span>
+              <span className="tabular-nums text-gray-700">
+                {formatPercent(Number(entry.value ?? 0))}
               </span>
             </div>
           );
@@ -105,101 +114,132 @@ function CustomTooltip({
   );
 }
 
-function ChartLegend() {
+function ChartLegend({
+  hidden,
+  onToggle,
+}: {
+  hidden: Set<LanguageKey>;
+  onToggle: (language: LanguageKey) => void;
+}) {
   return (
-    <div className="pt-24">
-      <p className="mb-3 text-[22px] font-medium text-black">
-        original_language
-      </p>
-      <div className="space-y-0.5">
-        {LEGEND_ORDER.map((language) => (
-          <div
+    <div className="mb-5 flex flex-wrap justify-center gap-2.5">
+      {LEGEND_ORDER.map((language) => {
+        const isHidden = hidden.has(language);
+        return (
+          <button
             key={language}
-            className="flex items-center gap-4 text-[22px] text-black"
+            type="button"
+            onClick={() => onToggle(language)}
+            className={`rounded-full border px-3 py-1.5 text-sm transition-colors ${
+              isHidden
+                ? "border-gray-300 bg-white text-gray-400"
+                : "bg-gray-50 text-gray-800"
+            }`}
+            style={{
+              borderColor: isHidden ? "#d1d5db" : COLORS[language],
+            }}
           >
             <span
-              className="h-12 w-12 shrink-0 border border-white/40"
+              className="mr-2 inline-block h-2.5 w-2.5 rounded-full"
               style={{ backgroundColor: COLORS[language] }}
             />
-            <span>{language}</span>
-          </div>
-        ))}
-      </div>
+            {LANGUAGE_LABELS[language]}
+          </button>
+        );
+      })}
     </div>
   );
 }
 
 export default function GenreLanguageChart() {
+  const [hidden, setHidden] = useState<Set<LanguageKey>>(new Set());
+
+  function toggleLanguage(language: LanguageKey) {
+    setHidden((prev) => {
+      const next = new Set(prev);
+      if (next.has(language)) {
+        next.delete(language);
+      } else {
+        next.add(language);
+      }
+      return next;
+    });
+  }
+
   return (
-    <div className="bg-white px-4 py-5 md:px-6 md:py-6">
-      <div className="overflow-x-auto">
-        <div className="min-w-[1220px]">
-          <h3 className="mb-3 text-left text-[36px] font-medium tracking-tight text-black">
-            Genre Distribution Within Major Languages
-          </h3>
+    <div className="rounded-lg bg-white p-6">
+      <h3 className="mb-2 text-center text-xl font-bold text-gray-800">
+        Genre Distribution Within Major Languages
+      </h3>
+      <p className="mb-5 text-center text-sm text-gray-500">
+        Toggle languages in the legend to isolate how each one contributes to
+        genre patterns.
+      </p>
 
-          <div className="grid grid-cols-[1fr_260px] items-start gap-8">
-            <div>
-              <div className="h-[690px] bg-[#EBEBEB] p-2">
-                <ResponsiveContainer width="100%" height="100%">
-                  <BarChart
-                    data={dataWithTotals}
-                    barCategoryGap={8}
-                    barGap={0}
-                    margin={{ top: 10, right: 14, left: 18, bottom: 120 }}
-                  >
-                    <CartesianGrid stroke="#FFFFFF" strokeWidth={1} />
-                    <XAxis
-                      dataKey="genre"
-                      angle={-60}
-                      textAnchor="end"
-                      interval={0}
-                      height={110}
-                      tick={{ fontSize: 12, fill: "#4B5563" }}
-                      tickLine={{ stroke: "#4B5563" }}
-                      axisLine={{ stroke: "#4B5563" }}
-                    />
-                    <YAxis
-                      domain={[0, 1.9]}
-                      ticks={[0, 0.5, 1, 1.5]}
-                      tickFormatter={(value) => value.toFixed(1)}
-                      tick={{ fontSize: 12, fill: "#4B5563" }}
-                      tickLine={{ stroke: "#4B5563" }}
-                      axisLine={{ stroke: "#4B5563" }}
-                      label={{
-                        value: "Proportion of Films",
-                        angle: -90,
-                        position: "insideLeft",
-                        offset: -2,
-                        style: { fontSize: 22, fill: "#111827" },
-                      }}
-                    />
-                    <Tooltip
-                      content={<CustomTooltip />}
-                      cursor={{ fill: "rgba(255, 255, 255, 0.28)" }}
-                    />
-                    {STACK_ORDER.map((language) => (
-                      <Bar
-                        key={language}
-                        dataKey={language}
-                        stackId="languages"
-                        fill={COLORS[language]}
-                        stroke={COLORS[language]}
-                        strokeWidth={0.5}
-                        isAnimationActive={false}
-                        maxBarSize={54}
-                      />
-                    ))}
-                  </BarChart>
-                </ResponsiveContainer>
-              </div>
-              <p className="mt-6 text-center text-[24px] text-black">Genre</p>
-            </div>
+      <ChartLegend hidden={hidden} onToggle={toggleLanguage} />
 
-            <ChartLegend />
-          </div>
+      <div className="bg-white p-1">
+        <div className="h-[470px]">
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart
+              data={data}
+              barCategoryGap="18%"
+              barGap={0}
+              margin={{ top: 12, right: 18, left: 8, bottom: 44 }}
+            >
+              <CartesianGrid
+                stroke="#d9d9d9"
+                strokeDasharray="3 3"
+                vertical={false}
+              />
+              <XAxis
+                dataKey="genre"
+                interval={0}
+                angle={-32}
+                textAnchor="end"
+                height={52}
+                tickMargin={4}
+                tick={{ fontSize: 11, fill: "#4b5563" }}
+                tickLine={false}
+                axisLine={{ stroke: "#9ca3af" }}
+              />
+              <YAxis
+                domain={[0, 1.9]}
+                ticks={[0, 0.5, 1, 1.5]}
+                tickFormatter={(value) => value.toFixed(1)}
+                tick={{ fontSize: 12, fill: "#4b5563" }}
+                tickLine={false}
+                axisLine={{ stroke: "#9ca3af" }}
+                label={{
+                  value: "Proportion of Films",
+                  angle: -90,
+                  position: "insideLeft",
+                  offset: -4,
+                  style: { fontSize: 13, fill: "#374151" },
+                }}
+              />
+              <Tooltip
+                content={<CustomTooltip />}
+                cursor={{ fill: "rgba(209, 213, 219, 0.25)" }}
+              />
+              {STACK_ORDER.map((language, index) => (
+                <Bar
+                  key={language}
+                  dataKey={language}
+                  hide={hidden.has(language)}
+                  stackId="languages"
+                  fill={COLORS[language]}
+                  radius={index === STACK_ORDER.length - 1 ? [3, 3, 0, 0] : 0}
+                  isAnimationActive={false}
+                  maxBarSize={42}
+                />
+              ))}
+            </BarChart>
+          </ResponsiveContainer>
         </div>
       </div>
+
+      <p className="mt-0 text-center text-sm text-gray-500">Genre</p>
     </div>
   );
 }

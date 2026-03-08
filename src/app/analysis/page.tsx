@@ -145,12 +145,34 @@ export default function AnalysisPage() {
 
       <section className="mb-16">
         <h2 className="text-3xl font-bold text-[#c9a84c] mb-4">
+          Historical Context
+        </h2>
+        <p className="text-[#999] text-sm leading-relaxed mb-6">
+          [add short timeline transition]
+        </p>
+
+        <div className="bg-white rounded-lg p-4 md:p-6 mb-6">
+          <iframe
+            src="https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=v2%3A2PACX-1vRWIpWgGwIkxIV_ZafxQYEHGWL9BhpgBqxWM1hYo4mbpi2p96QgJd_Z2jaGrQXJAdB5ArbaR8CsWkHA&font=Default&lang=en&initial_zoom=2&width=100%25&height=650"
+            width="100%"
+            height="650"
+            allowFullScreen
+            title="Timeline of key developments in global film industry history"
+            className="rounded-lg border-0"
+          />
+        </div>
+
+        <p className="text-[#999] leading-relaxed">
+          [add brief timeline analysis]
+        </p>
+      </section>
+
+      <section className="mb-16">
+        <h2 className="text-3xl font-bold text-[#c9a84c] mb-4">
           Thematic Patterns in Film Keywords
         </h2>
         <p className="text-[#999] text-sm leading-relaxed mb-6">
-          [add transition connecting the literature review to the first
-          visualization and explaining why keyword frequency helps introduce the
-          cultural patterns inside the dataset]
+          [add short transition]
         </p>
 
         <div className="bg-white rounded-lg p-4 md:p-6 mb-6">
@@ -181,9 +203,7 @@ export default function AnalysisPage() {
             genres.
           </p>
           <p className="text-[#999]">
-            [add 1 to 2 sentences connecting these recurring themes back to the
-            research questions about industry power, audience reception, or
-            global circulation]
+            [add brief interpretation]
           </p>
         </div>
       </section>
@@ -193,8 +213,7 @@ export default function AnalysisPage() {
           Genre Distribution Across Major Languages
         </h2>
         <p className="text-[#999] text-sm leading-relaxed mb-6">
-          [add transition showing how the project moves from keyword-level
-          themes to language-level production patterns]
+          [add short transition]
         </p>
 
         <div className="mb-6">
@@ -213,9 +232,7 @@ export default function AnalysisPage() {
             revealing common genre trends shared across global film production.
           </p>
           <p className="text-[#999]">
-            [add interpretation of why shared genre dominance matters and what
-            it suggests about global film markets, audience expectations, or
-            industry standardization]
+            [add brief interpretation]
           </p>
         </div>
       </section>
@@ -225,8 +242,7 @@ export default function AnalysisPage() {
           Non-English Film Production Over Time
         </h2>
         <p className="text-[#999] text-sm leading-relaxed mb-6">
-          [add transition from genre distribution to how non-English production
-          changes over time]
+          [add short transition]
         </p>
 
         <div className="mb-6">
@@ -235,9 +251,7 @@ export default function AnalysisPage() {
 
         <div className="space-y-4 text-[#ccc] leading-relaxed">
           <p className="text-[#999]">
-            [add paragraph describing which languages grow most sharply over
-            time, where major spikes appear, and what that suggests about global
-            film production beyond English-language markets]
+            [add brief analysis]
           </p>
         </div>
       </section>
@@ -247,8 +261,7 @@ export default function AnalysisPage() {
           Ratings and Revenue by Decade
         </h2>
         <p className="text-[#999] text-sm leading-relaxed mb-6">
-          [add transition into how the relationship between ratings and revenue
-          changes over time]
+          [add short transition]
         </p>
 
         <div className="mb-6">
@@ -263,9 +276,7 @@ export default function AnalysisPage() {
         </div>
 
         <p className="text-[#999] leading-relaxed">
-          [add paragraph explaining whether higher ratings become less predictive
-          of revenue in later decades and what that suggests about studio
-          strategy, marketing, and audience behavior]
+          [add brief analysis]
         </p>
       </section>
 
@@ -274,22 +285,18 @@ export default function AnalysisPage() {
           Geographic Patterns of Film Production
         </h2>
         <p className="text-[#999] text-sm leading-relaxed mb-6">
-          [add transition from language to geography and explain why location is
-          necessary for understanding power in global film production]
+          [add short transition]
         </p>
 
         <div className="bg-white rounded-lg p-4 md:p-6 mb-6 overflow-hidden">
           <TableauMapEmbed />
           <p className="text-[#666] text-sm mt-4 leading-relaxed">
-            [add caption/source credit for the map and a short alt-text style
-            description]
+            [add map caption]
           </p>
         </div>
 
         <p className="text-[#999] leading-relaxed">
-          [add paragraph explaining what the map shows, which countries or
-          regions dominate production, and how that supports your argument about
-          unequal industry power structures]
+          [add brief map analysis]
         </p>
       </section>
     </div>
