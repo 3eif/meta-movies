@@ -15,7 +15,7 @@ export default function About() {
           <h3 className="text-lg font-bold text-[#c9a84c] mb-3">
             Selecting Sources
           </h3>
-          <div className="space-y-4 text-[#ccc] leading-relaxed text-sm">
+          <div className="space-y-4 text-[#ccc] page-copy">
             <p>
               Our main dataset, The Movies Dataset, includes data from over
               45,000 films, categorized by name, genre, directors, production
@@ -64,7 +64,7 @@ export default function About() {
           <h3 className="text-lg font-bold text-[#c9a84c] mb-3">
             Data Processing
           </h3>
-          <p className="text-[#ccc] leading-relaxed text-sm">
+          <p className="text-[#ccc] page-copy">
             The dataset was initially already quite clean, but we used R to do a
             brief clean and to visually organize the data in a comprehensible
             format. To make our visualizations and graphs, we used Tableau,
@@ -84,7 +84,7 @@ export default function About() {
           <h3 className="text-lg font-bold text-[#c9a84c] mb-3">
             Narrative Presentation
           </h3>
-          <p className="text-[#ccc] leading-relaxed text-sm">
+          <p className="text-[#ccc] page-copy">
             Our web developer, Seif, is quite familiar with Vercel and coding,
             so we decided to use Vercel rather than WordPress to create and
             organize our argument. We chose a dark theme with gold and red
@@ -104,7 +104,7 @@ export default function About() {
         <h2 className="text-2xl font-bold text-[#c9a84c] mb-6">
           Acknowledgments
         </h2>
-        <ul className="text-[#ccc] leading-relaxed space-y-4">
+        <ul className="text-[#ccc] page-copy space-y-4">
           <li>
             <span className="text-[#e8e8e8] font-semibold">
               Pietro Santachiara

@@ -11,14 +11,14 @@ export default function RatingsCommercialSuccessPage() {
           Ratings &amp; Commercial Success
         </h1>
         <div className="w-16 h-0.5 bg-[#c9a84c] mb-8"></div>
-        <p className="text-[#ccc] leading-relaxed text-base">
+        <p className="text-[#ccc] page-copy">
           How has the relationship between ratings and commercial success
           changed over time, and what might this reveal about studio goals and
           audience values?
         </p>
       </header>
 
-      <section className="space-y-6 text-[#ccc] leading-relaxed mb-16">
+      <section className="space-y-6 text-[#ccc] page-copy mb-16">
         <h2 className="text-3xl font-bold text-[#c9a84c]">
           Ratings &amp; Commercial Success
         </h2>
@@ -48,7 +48,7 @@ export default function RatingsCommercialSuccessPage() {
         </div>
       </section>
 
-      <section className="space-y-6 text-[#ccc] leading-relaxed mb-16">
+      <section className="space-y-6 text-[#ccc] page-copy mb-16">
         <h2 className="text-3xl font-bold text-[#c9a84c]">
           Earlier Period (1960s-1980s): Ratings More Closely Linked to Success
         </h2>
@@ -76,7 +76,7 @@ export default function RatingsCommercialSuccessPage() {
         </p>
       </section>
 
-      <section className="space-y-6 text-[#ccc] leading-relaxed mb-16">
+      <section className="space-y-6 text-[#ccc] page-copy mb-16">
         <h2 className="text-3xl font-bold text-[#c9a84c]">
           Modern Era (1990s-2010s): Evolving Relationships
         </h2>
@@ -107,7 +107,7 @@ export default function RatingsCommercialSuccessPage() {
         </p>
       </section>
 
-      <section className="space-y-6 text-[#ccc] leading-relaxed">
+      <section className="space-y-6 text-[#ccc] page-copy">
         <h2 className="text-3xl font-bold text-[#c9a84c]">
           Studio Goals &amp; Audience Values
         </h2>

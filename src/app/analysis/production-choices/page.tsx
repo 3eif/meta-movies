@@ -11,7 +11,7 @@ export default function ProductionChoicesPage() {
         <div className="w-16 h-0.5 bg-[#c9a84c] mb-8"></div>
       </header>
 
-      <section className="space-y-6 text-[#ccc] leading-relaxed">
+      <section className="space-y-6 text-[#ccc] page-copy">
         <p>
           Are films with unconventional genres or production choices more
           likely to come from independent studios, and how are they received
@@ -25,7 +25,7 @@ export default function ProductionChoicesPage() {
           taste in film?
         </p>
 
-        <p className="text-[#999]">[add section]</p>
+        <p className="text-[#999] page-muted">[add section]</p>
       </section>
     </div>
   );

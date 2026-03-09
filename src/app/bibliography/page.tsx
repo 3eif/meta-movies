@@ -145,7 +145,7 @@ function BibliographyAccordion({ entries }: { entries: Entry[] }) {
             <div className="flex items-center justify-between gap-4">
               <div>
                 <p className="text-[#e8e8e8] font-semibold">{entry.label}</p>
-                <p className="text-[#999] text-sm mt-1 leading-relaxed">
+                <p className="text-[#999] page-muted mt-1">
                   {entry.citation}
                 </p>
               </div>
@@ -156,7 +156,7 @@ function BibliographyAccordion({ entries }: { entries: Entry[] }) {
           </summary>
           <div className="px-5 pb-5">
             <div className="h-px bg-[#c9a84c]/10 mb-4" />
-            <p className="text-[#ccc] leading-relaxed">{entry.annotation}</p>
+            <p className="text-[#ccc] page-copy">{entry.annotation}</p>
           </div>
         </details>
       ))}
@@ -175,7 +175,7 @@ export default function BibliographyPage() {
           Annotated Bibliography
         </h1>
         <div className="w-16 h-0.5 bg-[#c9a84c] mb-6"></div>
-        <p className="text-[#999] leading-relaxed">
+        <p className="text-[#999] page-muted">
           Click each source to expand its annotation.
         </p>
       </header>

@@ -7,7 +7,7 @@ export default function AnalysisOverviewPage() {
         </p>
         <h1 className="text-5xl font-bold text-[#c9a84c] mb-4">Overview</h1>
         <div className="w-16 h-0.5 bg-[#c9a84c] mb-8"></div>
-        <div className="space-y-6 text-[#ccc] leading-relaxed text-base">
+        <div className="space-y-6 text-[#ccc] page-copy">
           <p>
             The global film industry is one of the largest industries in the
             world, generating billions of dollars annually, shaped by creative
@@ -160,7 +160,7 @@ export default function AnalysisOverviewPage() {
         <h2 className="text-3xl font-bold text-[#c9a84c] mb-4">
           Historical Context
         </h2>
-        <p className="text-[#999] text-sm leading-relaxed mb-6">
+        <p className="text-[#999] page-muted mb-6">
           [add short timeline transition]
         </p>
 
@@ -175,7 +175,7 @@ export default function AnalysisOverviewPage() {
           />
         </div>
 
-        <p className="text-[#999] leading-relaxed">
+        <p className="text-[#999] page-muted">
           [add brief timeline analysis]
         </p>
       </section>

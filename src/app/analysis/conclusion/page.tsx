@@ -10,7 +10,7 @@ export default function ConclusionPage() {
       </header>
 
       <section>
-        <p className="text-[#999] leading-relaxed">[add conclusion]</p>
+        <p className="text-[#999] page-muted">[add conclusion]</p>
       </section>
     </div>
   );

@@ -4,7 +4,7 @@ export default function DataCritique() {
       <h1 className="text-5xl font-bold text-[#c9a84c] mb-4">Data Critique</h1>
       <div className="w-16 h-0.5 bg-[#c9a84c] mb-10"></div>
 
-      <div className="space-y-6 text-[#ccc] leading-relaxed">
+      <div className="space-y-6 text-[#ccc] page-copy">
         <p>
           Our dataset, &ldquo;The Movies Dataset,&rdquo; contains the data and
           metadata of over 45,000 movies and has provided a strong launching

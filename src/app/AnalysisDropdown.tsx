@@ -59,7 +59,7 @@ export default function AnalysisDropdown() {
         onClick={() => setOpen((current) => !current)}
         aria-expanded={open}
         aria-haspopup="menu"
-        className="flex items-center gap-2 hover:text-[#c9a84c] transition-colors duration-300"
+        className="flex items-center gap-2 text-sm tracking-widest uppercase hover:text-[#c9a84c] transition-colors duration-300"
       >
         <span>Analysis</span>
         <svg
