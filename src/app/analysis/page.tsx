@@ -1,16 +1,11 @@
-import Image from "next/image";
-import GenreLanguageChart from "../text-analysis/GenreLanguageChart";
-import LanguageProductionLineChart from "./LanguageProductionLineChart";
-import TableauMapEmbed from "./TableauMapEmbed";
-
-export default function AnalysisPage() {
+export default function AnalysisOverviewPage() {
   return (
     <div className="max-w-6xl mx-auto px-6 py-16">
       <header className="mb-14">
         <p className="text-[#c9a84c]/80 uppercase tracking-[0.3em] text-xs mb-3">
           Main Narrative
         </p>
-        <h1 className="text-5xl font-bold text-[#c9a84c] mb-4">Analysis</h1>
+        <h1 className="text-5xl font-bold text-[#c9a84c] mb-4">Overview</h1>
         <div className="w-16 h-0.5 bg-[#c9a84c] mb-8"></div>
         <div className="space-y-6 text-[#ccc] leading-relaxed text-base">
           <p>
@@ -130,18 +125,36 @@ export default function AnalysisPage() {
             side of movies benefit from these findings as well. Understanding
             how language and international dynamics play into film distribution
             can keep consumers aware of film marketing strategies and success.
-            Those interested in specific culture or language&rsquo;s relationship
-            with film can also learn from the visualizations presented here. As
-            films become engrained in the overarching cultural development of
-            nations, tracking and analyzing the languages used in films made
-            over the span of our dataset (and beyond) could prove invaluable.
-            Far in the future, there may come a time when a language can only
-            be heard through the films its speakers once made. For the benefit
-            of historical and linguistic research, movies must be studied to
-            learn and adapt our collective approach to culture in the theaters.
+            Those interested in a specific culture or language&rsquo;s
+            relationship with film can also learn from the visualizations
+            presented here. As films become engrained in the overarching
+            cultural development of nations, tracking and analyzing the
+            languages used in films made over the span of our dataset (and
+            beyond) could prove invaluable. Far in the future, there may come a
+            time when a language can only be heard through the films its
+            speakers once made. For the benefit of historical and linguistic
+            research, movies must be studied to learn and adapt our collective
+            approach to culture in the theaters.
           </p>
         </div>
       </header>
+
+      <section className="mb-16">
+        <h2 className="text-3xl font-bold text-[#c9a84c] mb-6">
+          Research Questions
+        </h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          {[
+            "How has the relationship between ratings and commercial success changed over time, and what might this reveal about studio goals and audience values?",
+            "Are films with unconventional genres or production choices more likely to come from independent studios, and how are they received compared to mainstream productions?",
+            "How do patterns of language, country of production, and genre intersect to shape which films achieve international popularity versus remaining regionally successful?",
+          ].map((question) => (
+            <div key={question} className="card p-6">
+              <p className="text-[#ccc] leading-relaxed text-sm">{question}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
       <section className="mb-16">
         <h2 className="text-3xl font-bold text-[#c9a84c] mb-4">
@@ -164,139 +177,6 @@ export default function AnalysisPage() {
 
         <p className="text-[#999] leading-relaxed">
           [add brief timeline analysis]
-        </p>
-      </section>
-
-      <section className="mb-16">
-        <h2 className="text-3xl font-bold text-[#c9a84c] mb-4">
-          Thematic Patterns in Film Keywords
-        </h2>
-        <p className="text-[#999] text-sm leading-relaxed mb-6">
-          [add short transition]
-        </p>
-
-        <div className="bg-white rounded-lg p-4 md:p-6 mb-6">
-          <div className="w-full aspect-10/7">
-            <iframe
-              className="w-full h-full rounded-lg"
-              style={{ minHeight: "420px", minWidth: "320px" }}
-              src="https://voyant-tools.org/tool/Cirrus/?visible=250&corpus=7b5af96b06e6109621d7fac901d24ece"
-              title="Voyant Cirrus word cloud of film keywords"
-              allowFullScreen
-            />
-          </div>
-        </div>
-
-        <div className="space-y-4 text-[#ccc] leading-relaxed">
-          <p>
-            This visualization was generated on Voyant to explore the most
-            frequently occurring terms in the Key Words of our dataset. Each
-            word represents a term extracted during text processing and the size
-            of the word indicates its frequency within the dataset with larger
-            words appearing more often across film descriptions. The
-            visualization highlights dominant themes such as love, life, family,
-            young, home, world, suggesting that the dataset strongly features
-            relationship-driven plots. Other words such as death, murder,
-            police, and war indicate the presence of genres such as crime,
-            drama, social justice films and thrillers. This visualization
-            provides insight into thematic patterns or recurring elements and
-            genres.
-          </p>
-          <p className="text-[#999]">
-            [add brief interpretation]
-          </p>
-        </div>
-      </section>
-
-      <section className="mb-16">
-        <h2 className="text-3xl font-bold text-[#c9a84c] mb-4">
-          Genre Distribution Across Major Languages
-        </h2>
-        <p className="text-[#999] text-sm leading-relaxed mb-6">
-          [add short transition]
-        </p>
-
-        <div className="mb-6">
-          <GenreLanguageChart />
-        </div>
-
-        <div className="space-y-4 text-[#ccc] leading-relaxed">
-          <p>
-            This stacked bar chart shows the distribution of movie genres across
-            major original languages in the dataset. Each bar represents a
-            genre, while the colored segments indicate the proportion of films
-            produced in different languages. The visualization shows that genres
-            such as Drama and Comedy dominate across all languages, while genres
-            like Western, War and Music appear less frequently. Overall, the
-            chart illustrates how genre popularity varies by language while
-            revealing common genre trends shared across global film production.
-          </p>
-          <p className="text-[#999]">
-            [add brief interpretation]
-          </p>
-        </div>
-      </section>
-
-      <section className="mb-16">
-        <h2 className="text-3xl font-bold text-[#c9a84c] mb-4">
-          Non-English Film Production Over Time
-        </h2>
-        <p className="text-[#999] text-sm leading-relaxed mb-6">
-          [add short transition]
-        </p>
-
-        <div className="mb-6">
-          <LanguageProductionLineChart />
-        </div>
-
-        <div className="space-y-4 text-[#ccc] leading-relaxed">
-          <p className="text-[#999]">
-            [add brief analysis]
-          </p>
-        </div>
-      </section>
-
-      <section className="mb-16">
-        <h2 className="text-3xl font-bold text-[#c9a84c] mb-4">
-          Ratings and Revenue by Decade
-        </h2>
-        <p className="text-[#999] text-sm leading-relaxed mb-6">
-          [add short transition]
-        </p>
-
-        <div className="mb-6">
-          <Image
-            src="/charts/ratings-revenue-correlation.png"
-            alt="Line and bubble chart showing Pearson correlation between vote average and log revenue by decade, with larger circles representing more films."
-            width={2536}
-            height={1572}
-            unoptimized
-            className="w-full h-auto rounded-lg"
-          />
-        </div>
-
-        <p className="text-[#999] leading-relaxed">
-          [add brief analysis]
-        </p>
-      </section>
-
-      <section className="mb-16">
-        <h2 className="text-3xl font-bold text-[#c9a84c] mb-4">
-          Geographic Patterns of Film Production
-        </h2>
-        <p className="text-[#999] text-sm leading-relaxed mb-6">
-          [add short transition]
-        </p>
-
-        <div className="bg-white rounded-lg p-4 md:p-6 mb-6 overflow-hidden">
-          <TableauMapEmbed />
-          <p className="text-[#666] text-sm mt-4 leading-relaxed">
-            [add map caption]
-          </p>
-        </div>
-
-        <p className="text-[#999] leading-relaxed">
-          [add brief map analysis]
         </p>
       </section>
     </div>

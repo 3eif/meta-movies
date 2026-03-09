@@ -53,12 +53,45 @@ export default function RootLayout({
               >
                 About
               </Link>
-              <Link
-                href="/analysis"
-                className="hover:text-[#c9a84c] transition-colors duration-300"
-              >
-                Analysis
-              </Link>
+              <details className="relative">
+                <summary className="list-none cursor-pointer hover:text-[#c9a84c] transition-colors duration-300">
+                  Analysis
+                </summary>
+                <div className="absolute left-1/2 top-full -translate-x-1/2 pt-4">
+                  <div className="min-w-[19rem] rounded-xl border border-[#c9a84c]/20 bg-[#111111]/95 p-2 shadow-2xl backdrop-blur-sm">
+                    <Link
+                      href="/analysis"
+                      className="block rounded-lg px-4 py-3 text-xs tracking-[0.18em] hover:bg-[#c9a84c]/10 hover:text-[#c9a84c] transition-colors duration-300"
+                    >
+                      Overview
+                    </Link>
+                    <Link
+                      href="/analysis/ratings-commercial-success"
+                      className="block rounded-lg px-4 py-3 text-xs tracking-[0.18em] hover:bg-[#c9a84c]/10 hover:text-[#c9a84c] transition-colors duration-300"
+                    >
+                      Ratings &amp; Commercial Success
+                    </Link>
+                    <Link
+                      href="/analysis/production-choices"
+                      className="block rounded-lg px-4 py-3 text-xs tracking-[0.18em] hover:bg-[#c9a84c]/10 hover:text-[#c9a84c] transition-colors duration-300"
+                    >
+                      Unconventional Genres &amp; Production Choices
+                    </Link>
+                    <Link
+                      href="/analysis/language-country-genre"
+                      className="block rounded-lg px-4 py-3 text-xs tracking-[0.18em] hover:bg-[#c9a84c]/10 hover:text-[#c9a84c] transition-colors duration-300"
+                    >
+                      Language, Country, &amp; Genre
+                    </Link>
+                    <Link
+                      href="/analysis/conclusion"
+                      className="block rounded-lg px-4 py-3 text-xs tracking-[0.18em] hover:bg-[#c9a84c]/10 hover:text-[#c9a84c] transition-colors duration-300"
+                    >
+                      Conclusion
+                    </Link>
+                  </div>
+                </div>
+              </details>
               <Link
                 href="/data-critique"
                 className="hover:text-[#c9a84c] transition-colors duration-300"
