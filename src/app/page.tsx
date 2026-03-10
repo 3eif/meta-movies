@@ -1,31 +1,9 @@
+import HomeProjectorHero from "./HomeProjectorHero";
+
 export default function Home() {
   return (
     <div>
-      {/* Hero */}
-      <section className="min-h-[85vh] flex flex-col items-center justify-center text-center px-6 relative">
-        {/* Background glow */}
-        <div className="hero-glow" />
-
-        <div className="max-w-3xl relative z-10">
-          <h1 className="text-7xl md:text-8xl font-bold mb-6 leading-tight gold-shimmer">
-            Meta Movies
-          </h1>
-          <div className="mt-12 flex gap-5 justify-center">
-            <a
-              href="/about"
-              className="btn-primary px-7 py-3 bg-[#c9a84c] text-[#0a0a0a] font-semibold text-sm uppercase tracking-wider hover:bg-[#e8d48b]"
-            >
-              About the Project
-            </a>
-            <a
-              href="/data-critique"
-              className="btn-outline px-7 py-3 border border-[#c9a84c]/40 text-[#c9a84c] text-sm uppercase tracking-wider hover:bg-[#c9a84c]/10"
-            >
-              Data Critique
-            </a>
-          </div>
-        </div>
-      </section>
+      <HomeProjectorHero />
 
       {/* Stats */}
       <section className="max-w-6xl mx-auto px-6 py-20">
