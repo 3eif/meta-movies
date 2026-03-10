@@ -127,6 +127,68 @@ const entries = [
   },
 ];
 
+const dataEntries = [
+  {
+    label: "The Movies Dataset",
+    citation:
+      'Banik, Rounak. "The Movies Dataset." Kaggle, https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset.',
+    annotation:
+      "This dataset serves as the foundation of our project. It combines metadata for over 45,000 films with financial, production, language, and rating information, making it possible for us to examine patterns across genre, country, language, revenue, and audience reception.",
+  },
+  {
+    label: "TMDB Open API",
+    citation:
+      "The Movie Database (TMDB). TMDB API. https://developer.themoviedb.org/.",
+    annotation:
+      "TMDB provided much of the movie-level metadata used in the dataset, including production details, release information, keywords, and credits. This source was important because it helped us connect industrial and textual features of films to broader questions about global production and circulation.",
+  },
+  {
+    label: "GroupLens / MovieLens",
+    citation:
+      "GroupLens Research. MovieLens. University of Minnesota, https://grouplens.org/datasets/movielens/.",
+    annotation:
+      "MovieLens supplied the user ratings data that allowed us to compare audience evaluation with commercial success and other film characteristics. It was especially useful for our question about how ratings relate to revenue over time.",
+  },
+];
+
+const toolEntries = [
+  {
+    label: "Voyant Tools",
+    citation:
+      "Sinclair, Stéfan, and Geoffrey Rockwell. Voyant Tools. https://voyant-tools.org/.",
+    annotation:
+      "We used Voyant Tools to generate the word cloud from film keywords. It helped us identify recurring themes in the dataset and introduce a more text-oriented form of analysis alongside our quantitative visualizations.",
+  },
+  {
+    label: "Tableau Public",
+    citation:
+      "Tableau Public. Tableau Software, https://public.tableau.com/.",
+    annotation:
+      "We used Tableau to build our interactive map of film production. Tableau was helpful because it allowed us to present geographic patterns in a form that readers can explore visually through interactivity.",
+  },
+  {
+    label: "TimelineJS",
+    citation:
+      "Knight Lab. TimelineJS. Northwestern University, https://timeline.knightlab.com/.",
+    annotation:
+      "TimelineJS allowed us to build an interactive timeline that places our dataset in historical context. It supports the project by connecting film-industry patterns to larger historical developments over time.",
+  },
+  {
+    label: "R",
+    citation:
+      "R Core Team. R: A Language and Environment for Statistical Computing. R Foundation for Statistical Computing, https://www.r-project.org/.",
+    annotation:
+      "We used R for data cleaning and preparation before analysis. It helped us remove duplicates, standardize missing values, and organize the dataset into forms that were easier to visualize.",
+  },
+  {
+    label: "Python",
+    citation:
+      "Python Software Foundation. Python. https://www.python.org/.",
+    annotation:
+      "Python was used to support data processing and visualization work in the project. It was especially useful for preparing chart-ready data and working flexibly across different parts of the workflow.",
+  },
+];
+
 type Entry = {
   label: string;
   citation: string;
@@ -180,11 +242,25 @@ export default function BibliographyPage() {
         </p>
       </header>
 
-      <section>
+      <section className="mb-16">
         <h2 className="text-2xl font-bold text-[#c9a84c] mb-6">
           Secondary Sources
         </h2>
         <BibliographyAccordion entries={entries} />
+      </section>
+
+      <section className="mb-16">
+        <h2 className="text-2xl font-bold text-[#c9a84c] mb-6">
+          Data Sources
+        </h2>
+        <BibliographyAccordion entries={dataEntries} />
+      </section>
+
+      <section className="mb-16">
+        <h2 className="text-2xl font-bold text-[#c9a84c] mb-6">
+          Tools and Platforms
+        </h2>
+        <BibliographyAccordion entries={toolEntries} />
       </section>
     </div>
   );

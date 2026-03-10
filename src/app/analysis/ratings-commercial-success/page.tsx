@@ -1,4 +1,5 @@
 import Image from "next/image";
+import BudgetRevenueScatterChart from "../BudgetRevenueScatterChart";
 
 export default function RatingsCommercialSuccessPage() {
   return (
@@ -46,6 +47,42 @@ export default function RatingsCommercialSuccessPage() {
             className="w-full h-auto rounded-lg"
           />
         </div>
+        <p className="text-[#ccc] page-copy">
+          This correlation plot shows the relationship between film ratings and
+          box office revenue across different decades. Each point represents the
+          Pearson correlation between the average IMDb rating of films and the
+          logarithm of their revenue for that decade, while the size of each
+          point reflects the number of films included in the sample. The
+          visualization indicates that the relationship between revenue and
+          ratings was strongest in the 1970s and 1980s, suggesting that higher
+          rated films at the time were more closely associated with higher
+          revenue during that period. The correlation steadily declines from
+          the 1990s and on, reaching the lowest correlation in the 2000s and
+          2010s. Overall, the chart suggests that while film quality once had a
+          stronger association with financial success, the relationship has
+          weakened over the decades as other factors such as marketing and
+          globalization have become increasingly important in determining box
+          office performance.
+        </p>
+      </section>
+
+      <section className="mb-16">
+        <BudgetRevenueScatterChart />
+        <p className="text-[#999] page-muted mt-4">
+          This chart uses a mixed sample of films with non-missing budget and
+          revenue values, including top-grossing outliers, to keep the
+          visualization readable.
+        </p>
+        <p className="text-[#ccc] page-copy mt-6">
+          This scatter plot compares film budgets and box office revenue across
+          films in the dataset. The visualization shows that while films with
+          larger budgets often earn higher revenue, the relationship is not
+          exact. Some high-budget films underperform, while some lower-budget
+          films earn strong returns. This supports one of the main ideas of our
+          project, that commercial success is shaped by more than budget alone
+          and reflects a wider mix of industrial, cultural, and economic
+          factors.
+        </p>
       </section>
 
       <section className="space-y-6 text-[#ccc] page-copy mb-16">

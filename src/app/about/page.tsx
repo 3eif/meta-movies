@@ -65,18 +65,25 @@ export default function About() {
             Data Processing
           </h3>
           <p className="text-[#ccc] page-copy">
-            The dataset was initially already quite clean, but we used R to do a
-            brief clean and to visually organize the data in a comprehensible
-            format. To make our visualizations and graphs, we used Tableau,
-            Excel, and Python. We chose these tools because of our team members’
-            familiarity using them as well as knowledge gained from Professor
-            Sabo during course lectures. The types of visualizations we chose
-            were dependent on the data being studied. Factors such as
-            qualitative or quantitative, and range of values helped us determine
-            what types of graphs or charts we created. To create a text analysis
-            of key terms used in film descriptions we used Voyant. Finally, we
-            used Timeline.js to create our timeline of important historical
-            events that have shaped the film industry into what it is today.
+            The dataset was already relatively clean, but we used R to do some
+            additional data cleaning and organization to prepare it for
+            analysis. We removed duplicate entries so that each movie appeared
+            only once in the dataset. We also cleaned messy text fields and
+            replaced blank cells with NA to standardize missing values. We
+            replaced values of 0 in variables such as budget, revenue, and
+            runtime with NA when those values likely represented missing
+            information. These steps helped make the dataset more consistent
+            and easier to analyze and visualize. To make our visualizations and
+            graphs, we used Tableau and Python. We chose these tools because of
+            our team members’ familiarity using them as well as knowledge
+            gained from Professor Sabo during course lectures. The types of
+            visualizations we chose were dependent on the data being studied.
+            Factors such as qualitative or quantitative, and range of values
+            helped us determine what types of graphs or charts we created. To
+            create a text analysis of key terms used in film descriptions we
+            used Voyant. Finally, we used Timeline.js to create our timeline of
+            important historical events that have shaped the film industry into
+            what it is today.
           </p>
         </div>
 

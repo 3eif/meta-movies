@@ -66,7 +66,7 @@ export default function Home() {
               icon: "01",
             },
             {
-              q: "Are films with unconventional genres or production choices more likely to come from independent studios, and how are they received compared to mainstream productions?",
+              q: "Are certain genres of film more popular than others in certain cultures/languages around the world and if so, what takeaways can be made about the cultures themselves based on their taste in film?",
               icon: "02",
             },
             {

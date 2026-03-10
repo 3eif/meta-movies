@@ -8,6 +8,7 @@ export default function AnalysisOverviewPage() {
         <h1 className="text-5xl font-bold text-[#c9a84c] mb-4">Overview</h1>
         <div className="w-16 h-0.5 bg-[#c9a84c] mb-8"></div>
         <div className="space-y-6 text-[#ccc] page-copy">
+          <h2 className="text-3xl font-bold text-[#c9a84c]">Introduction</h2>
           <p>
             The global film industry is one of the largest industries in the
             world, generating billions of dollars annually, shaped by creative
@@ -30,6 +31,9 @@ export default function AnalysisOverviewPage() {
             within the data itself.
           </p>
 
+          <h2 className="text-3xl font-bold text-[#c9a84c]">
+            Literature Review
+          </h2>
           <p>
             The literature explored topics related to the film industry that
             touched on many different aspects. The overall consensus between
@@ -95,6 +99,35 @@ export default function AnalysisOverviewPage() {
             and international film data.
           </p>
 
+          <div className="bg-white rounded-lg p-4 md:p-6">
+            <div className="w-full aspect-10/7">
+              <iframe
+                className="w-full h-full rounded-lg shadow-md"
+                style={{ minHeight: "400px", minWidth: "320px" }}
+                src="https://voyant-tools.org/tool/Cirrus/?visible=250&corpus=7b5af96b06e6109621d7fac901d24ece"
+                allowFullScreen
+                title="Voyant Cirrus word cloud of key words in the movie dataset"
+              />
+            </div>
+          </div>
+
+          <p>
+            This visualization was generated on Voyant to explore the most
+            frequently occurring terms in the Key Words of our dataset. Each word
+            represents a term extracted during text processing and the size of the
+            word indicates its frequency within the dataset with larger words
+            appearing more often across film descriptions. The visualization
+            highlights dominant themes such as love, life, family, young, home,
+            world, suggesting that the dataset strongly features
+            relationship-driven plots. Other words such as death, murder, police,
+            and war indicate the presence of genres such as crime, drama, social
+            justice films and thrillers. This visualization provides insight into
+            thematic patterns or recurring elements and genres.
+          </p>
+
+          <h2 className="text-3xl font-bold text-[#c9a84c]">
+            Why These Visualizations Matter
+          </h2>
           <p>
             Due to how subjective film can be as an art form, it can be
             difficult to analyze strictly by the numbers. However, by combining
@@ -146,7 +179,7 @@ export default function AnalysisOverviewPage() {
         <div className="grid md:grid-cols-3 gap-6">
           {[
             "How has the relationship between ratings and commercial success changed over time, and what might this reveal about studio goals and audience values?",
-            "Are films with unconventional genres or production choices more likely to come from independent studios, and how are they received compared to mainstream productions?",
+            "Are certain genres of film more popular than others in certain cultures/languages around the world and if so, what takeaways can be made about the cultures themselves based on their taste in film?",
             "How do patterns of language, country of production, and genre intersect to shape which films achieve international popularity versus remaining regionally successful?",
           ].map((question) => (
             <div key={question} className="card p-6">
@@ -160,10 +193,6 @@ export default function AnalysisOverviewPage() {
         <h2 className="text-3xl font-bold text-[#c9a84c] mb-4">
           Historical Context
         </h2>
-        <p className="text-[#999] page-muted mb-6">
-          [add short timeline transition]
-        </p>
-
         <div className="bg-white rounded-lg p-4 md:p-6 mb-6">
           <iframe
             src="https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=v2%3A2PACX-1vRWIpWgGwIkxIV_ZafxQYEHGWL9BhpgBqxWM1hYo4mbpi2p96QgJd_Z2jaGrQXJAdB5ArbaR8CsWkHA&font=Default&lang=en&initial_zoom=2&width=100%25&height=650"
@@ -174,10 +203,6 @@ export default function AnalysisOverviewPage() {
             className="rounded-lg border-0"
           />
         </div>
-
-        <p className="text-[#999] page-muted">
-          [add brief timeline analysis]
-        </p>
       </section>
     </div>
   );

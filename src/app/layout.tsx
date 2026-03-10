@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
-import Link from "next/link";
-import AnalysisDropdown from "./AnalysisDropdown";
+import SiteNav from "./SiteNav";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -33,43 +32,7 @@ export default function RootLayout({
         <div className="film-strip-left" />
         <div className="film-strip-right" />
 
-        <nav className="fixed top-0 w-full z-50 bg-[#0a0a0a]/90 backdrop-blur-sm border-b border-[#c9a84c]/20">
-          <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <Link
-              href="/"
-              className="font-[family-name:var(--font-playfair)] text-[#c9a84c] text-xl font-bold tracking-wide"
-            >
-              Meta Movies
-            </Link>
-            <div className="flex gap-8 text-sm tracking-widest uppercase">
-              <Link
-                href="/"
-                className="hover:text-[#c9a84c] transition-colors duration-300"
-              >
-                Home
-              </Link>
-              <Link
-                href="/about"
-                className="hover:text-[#c9a84c] transition-colors duration-300"
-              >
-                About
-              </Link>
-              <AnalysisDropdown />
-              <Link
-                href="/data-critique"
-                className="hover:text-[#c9a84c] transition-colors duration-300"
-              >
-                Data Critique
-              </Link>
-              <Link
-                href="/bibliography"
-                className="hover:text-[#c9a84c] transition-colors duration-300"
-              >
-                Bibliography
-              </Link>
-            </div>
-          </div>
-        </nav>
+        <SiteNav />
 
         <main className="pt-20">{children}</main>
 

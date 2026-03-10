@@ -167,7 +167,7 @@ export default function GenreLanguageChart() {
   }
 
   return (
-    <div className="rounded-lg bg-white p-6">
+    <div className="rounded-lg bg-white px-6 pt-10 pb-6">
       <h3 className="mb-2 text-center text-xl font-bold text-gray-800">
         Genre Distribution Within Major Languages
       </h3>

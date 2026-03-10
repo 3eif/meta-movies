@@ -8,10 +8,6 @@ export default function ConclusionPage() {
         <h1 className="text-5xl font-bold text-[#c9a84c] mb-4">Conclusion</h1>
         <div className="w-16 h-0.5 bg-[#c9a84c] mb-8"></div>
       </header>
-
-      <section>
-        <p className="text-[#999] page-muted">[add conclusion]</p>
-      </section>
     </div>
   );
 }
