@@ -1,3 +1,6 @@
+import BibliographyAccordion from "./BibliographyAccordion";
+import { BUSINESS_OF_FILM_ENTRY_ID } from "./entryIds";
+
 const entries = [
   {
     label: "Bignell & Woods (2023)",
@@ -42,6 +45,7 @@ const entries = [
       "The article by Pedro Garcia-del-Barrio and Hugo Zarco about determinants of movie revenues begins with various indicators of a movie's potential success. This includes talent concentration, awards won including Oscars, movie budget, and others. Then sorting the movies by age rating and box-office revenues they search for the most informative indicators of a movie's profitability. Although their final conclusions are somewhat limited, they do find significant evidence that profanity and nudity may harm a film's profitability or revenue, whereas violence seems to improve box-office outcomes. This information is useful when trying to determine how successful a movie will be before its release based on an audience's cultural values and preferences.",
   },
   {
+    id: BUSINESS_OF_FILM_ENTRY_ID,
     label: "Greenwald & Landry (2023)",
     citation:
       "Greenwald, Stephen R., et al. The Business of Film: A Practical Introduction. Routledge, Taylor & Francis Group, 2023.",
@@ -188,43 +192,6 @@ const toolEntries = [
       "Python was used to support data processing and visualization work in the project. It was especially useful for preparing chart-ready data and working flexibly across different parts of the workflow.",
   },
 ];
-
-type Entry = {
-  label: string;
-  citation: string;
-  annotation: string;
-};
-
-function BibliographyAccordion({ entries }: { entries: Entry[] }) {
-  return (
-    <div className="space-y-4">
-      {entries.map((entry) => (
-        <details
-          key={entry.label}
-          className="group rounded-xl border border-[#c9a84c]/15 bg-[#111111]/80 open:border-[#c9a84c]/35"
-        >
-          <summary className="cursor-pointer list-none px-5 py-4">
-            <div className="flex items-center justify-between gap-4">
-              <div>
-                <p className="text-[#e8e8e8] font-semibold">{entry.label}</p>
-                <p className="text-[#999] page-muted mt-1">
-                  {entry.citation}
-                </p>
-              </div>
-              <span className="text-[#c9a84c] text-xl leading-none transition-transform group-open:rotate-45">
-                +
-              </span>
-            </div>
-          </summary>
-          <div className="px-5 pb-5">
-            <div className="h-px bg-[#c9a84c]/10 mb-4" />
-            <p className="text-[#ccc] page-copy">{entry.annotation}</p>
-          </div>
-        </details>
-      ))}
-    </div>
-  );
-}
 
 export default function BibliographyPage() {
   return (

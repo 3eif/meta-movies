@@ -1,3 +1,7 @@
+import Link from "next/link";
+
+import { BUSINESS_OF_FILM_ENTRY_ID } from "../bibliography/entryIds";
+
 export default function AnalysisOverviewPage() {
   return (
     <div className="max-w-6xl mx-auto px-6 py-16">
@@ -51,13 +55,13 @@ export default function AnalysisOverviewPage() {
             lower ratings than more family-friendly films (Palsson, 2012). Other
             scholars have focused on the impact of factors such as awards won,
             budget (Garcia-del-Barrio, et al., 2017) and star-power in films
-            (Liao, et al., 2022; Nelson & Glotfelty, 2012) on success in
-            revenue and ratings. However, contradictions do exist in the
-            literature. While some scholars argue that star power, large
-            budgets, wide distribution, and marketing are the primary drivers of
-            revenue, others argue for a greater impact of cultural values. These
-            cultural values appear through film aspects such as themes, genres,
-            and representations of racial, gender, ethnic, sexual, and economic
+            (Liao, et al., 2022; Nelson & Glotfelty, 2012) on success in revenue
+            and ratings. However, contradictions do exist in the literature.
+            While some scholars argue that star power, large budgets, wide
+            distribution, and marketing are the primary drivers of revenue,
+            others argue for a greater impact of cultural values. These cultural
+            values appear through film aspects such as themes, genres, and
+            representations of racial, gender, ethnic, sexual, and economic
             diversity. There are also some disagreements about the value of
             stars in the cast and crew. While many scholars have found evidence
             suggesting that star power increases revenue and ratings, others
@@ -113,16 +117,17 @@ export default function AnalysisOverviewPage() {
 
           <p>
             This visualization was generated on Voyant to explore the most
-            frequently occurring terms in the Key Words of our dataset. Each word
-            represents a term extracted during text processing and the size of the
-            word indicates its frequency within the dataset with larger words
-            appearing more often across film descriptions. The visualization
-            highlights dominant themes such as love, life, family, young, home,
-            world, suggesting that the dataset strongly features
-            relationship-driven plots. Other words such as death, murder, police,
-            and war indicate the presence of genres such as crime, drama, social
-            justice films and thrillers. This visualization provides insight into
-            thematic patterns or recurring elements and genres.
+            frequently occurring terms in the Key Words of our dataset. Each
+            word represents a term extracted during text processing and the size
+            of the word indicates its frequency within the dataset with larger
+            words appearing more often across film descriptions. The
+            visualization highlights dominant themes such as love, life, family,
+            young, home, world, suggesting that the dataset strongly features
+            relationship-driven plots. Other words such as death, murder,
+            police, and war indicate the presence of genres such as crime,
+            drama, social justice films and thrillers. This visualization
+            provides insight into thematic patterns or recurring elements and
+            genres.
           </p>
 
           <h2 className="text-3xl font-bold text-[#c9a84c]">
@@ -134,21 +139,21 @@ export default function AnalysisOverviewPage() {
             dataset analysis with this site&rsquo;s visualizations we hope to
             contextualize the importance of film industry demographics. Through
             attempting to answer our research questions we hope to illuminate
-            the impacts of culture, language, and nationality on film
-            production and distribution. Although there are many scholarly
-            papers written about the effects that social factors have on movie
-            success, for example, we felt that using these visualizations to
-            present our findings would make the depth of research on movie
-            industry demographics more accessible and readable. By relying on
-            the concept that movie success is determined by industry factors
-            rather than content we can make conclusions about the relationship
-            between demographics and film metrics. One such conclusion is that
-            unequal access to industry resources affects an audience&rsquo;s
-            taste, reception, and ratings of a film. A major weakness of the
-            data set we studied was its focus almost exclusively on films made
-            in Western countries, especially the United States. However, this is
-            representative of the film industry as a whole. The data we are
-            left with, after accounting for its inherent bias, can still reveal
+            the impacts of culture, language, and nationality on film production
+            and distribution. Although there are many scholarly papers written
+            about the effects that social factors have on movie success, for
+            example, we felt that using these visualizations to present our
+            findings would make the depth of research on movie industry
+            demographics more accessible and readable. By relying on the concept
+            that movie success is determined by industry factors rather than
+            content we can make conclusions about the relationship between
+            demographics and film metrics. One such conclusion is that unequal
+            access to industry resources affects an audience&rsquo;s taste,
+            reception, and ratings of a film. A major weakness of the data set
+            we studied was its focus almost exclusively on films made in Western
+            countries, especially the United States. However, this is
+            representative of the film industry as a whole. The data we are left
+            with, after accounting for its inherent bias, can still reveal
             important findings. By interpreting the data available and its
             context within the industry, patterns and trends in revenue and
             budget can be presented informatively. Filmmakers and anyone else
@@ -203,6 +208,36 @@ export default function AnalysisOverviewPage() {
             className="rounded-lg border-0"
           />
         </div>
+        <section>
+          <p className="mb-4">
+            The film industry has a robust history, dating back to the late
+            1800s when Thomas Edison invented the first film viewing technology.
+            Since then, the film industry has been a staple of society and
+            culture, providing both entertainment and a representation of the
+            human experience through storytelling. This timeline investigates
+            the events that have contributed to the industry’s success, as well
+            as highlighting challenges that shaped the future of the industry.
+          </p>
+          <p>
+            To create this timeline, we referenced Stephen Greenwald’s{" "}
+            <Link
+              href={`/bibliography#${BUSINESS_OF_FILM_ENTRY_ID}`}
+              className="italic text-[#c9a84c] underline decoration-[#c9a84c]/40 underline-offset-4 transition-colors hover:text-[#d6ba6b]"
+            >
+              The Business of Film: A Practical Introduction
+            </Link>
+            , as it contains a detailed account of the history of the film
+            industry, focusing on the business model itself. From reading this
+            source and creating the timeline, we discovered several industry
+            trends that have persisted throughout time, including the continuous
+            rise in power of the “Big Five” film studios, the dominance and
+            influence of Hollywood on other countries’ industries, and the
+            global impact of digital media on society. While it’s faced
+            challenges in recent years due to Covid-19 and multiple union
+            strikes, the film industry is still incredibly impactful, and we’re
+            excited to see how it will grow and change in the coming years.
+          </p>
+        </section>
       </section>
     </div>
   );
