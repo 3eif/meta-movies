@@ -80,8 +80,8 @@ function CustomTooltip({
   }
 
   return (
-    <div className="rounded-lg border border-gray-200 bg-white px-3 py-3 text-sm shadow-lg">
-      <p className="mb-2 font-medium text-gray-900">{label}</p>
+    <div className="rounded-lg border border-[#c9a84c]/25 bg-[#111111]/95 px-3 py-3 text-sm shadow-[0_12px_30px_rgba(0,0,0,0.45)] backdrop-blur-sm">
+      <p className="mb-2 font-medium text-[#f5e6c8]">{label}</p>
       <div className="space-y-1">
         {LEGEND_ORDER.map((language) => {
           const entry = payload.find(
@@ -103,7 +103,7 @@ function CustomTooltip({
               >
                 {LANGUAGE_LABELS[language]}
               </span>
-              <span className="tabular-nums text-gray-700">
+              <span className="tabular-nums text-[#d2d2d2]">
                 {formatPercent(Number(entry.value ?? 0))}
               </span>
             </div>
@@ -132,11 +132,11 @@ function ChartLegend({
             onClick={() => onToggle(language)}
             className={`rounded-full border px-3 py-1.5 text-sm transition-colors ${
               isHidden
-                ? "border-gray-300 bg-white text-gray-400"
-                : "bg-gray-50 text-gray-800"
+                ? "border-[#4a4a4a] bg-[#101010] text-[#777]"
+                : "bg-[#1a1a1a] text-[#e5dcc8]"
             }`}
             style={{
-              borderColor: isHidden ? "#d1d5db" : COLORS[language],
+              borderColor: isHidden ? "#4a4a4a" : COLORS[language],
             }}
           >
             <span
@@ -167,18 +167,18 @@ export default function GenreLanguageChart() {
   }
 
   return (
-    <div className="rounded-lg bg-white px-6 pt-10 pb-6">
-      <h3 className="mb-2 text-center text-xl font-bold text-gray-800">
+    <div className="rounded-lg border border-[#c9a84c]/12 bg-[#141414] px-6 pt-10 pb-6 shadow-[0_0_30px_rgba(0,0,0,0.24)]">
+      <h3 className="mb-2 text-center text-xl font-bold text-[#f5e6c8]">
         Genre Distribution Within Major Languages
       </h3>
-      <p className="mb-5 text-center text-sm text-gray-500">
+      <p className="mb-5 text-center text-sm text-[#a6a6a6]">
         Toggle languages in the legend to isolate how each one contributes to
         genre patterns.
       </p>
 
       <ChartLegend hidden={hidden} onToggle={toggleLanguage} />
 
-      <div className="bg-white p-1">
+      <div className="p-1">
         <div className="h-[470px]">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart
@@ -188,7 +188,7 @@ export default function GenreLanguageChart() {
               margin={{ top: 12, right: 18, left: 8, bottom: 44 }}
             >
               <CartesianGrid
-                stroke="#d9d9d9"
+                stroke="rgba(232, 212, 139, 0.14)"
                 strokeDasharray="3 3"
                 vertical={false}
               />
@@ -199,28 +199,28 @@ export default function GenreLanguageChart() {
                 textAnchor="end"
                 height={52}
                 tickMargin={4}
-                tick={{ fontSize: 11, fill: "#4b5563" }}
+                tick={{ fontSize: 11, fill: "#d4c4a0" }}
                 tickLine={false}
-                axisLine={{ stroke: "#9ca3af" }}
+                axisLine={{ stroke: "rgba(201, 168, 76, 0.35)" }}
               />
               <YAxis
                 domain={[0, 1.9]}
                 ticks={[0, 0.5, 1, 1.5]}
                 tickFormatter={(value) => value.toFixed(1)}
-                tick={{ fontSize: 12, fill: "#4b5563" }}
+                tick={{ fontSize: 12, fill: "#d4c4a0" }}
                 tickLine={false}
-                axisLine={{ stroke: "#9ca3af" }}
+                axisLine={{ stroke: "rgba(201, 168, 76, 0.35)" }}
                 label={{
                   value: "Proportion of Films",
                   angle: -90,
                   position: "insideLeft",
                   offset: -4,
-                  style: { fontSize: 13, fill: "#374151" },
+                  style: { fontSize: 13, fill: "#e8d48b" },
                 }}
               />
               <Tooltip
                 content={<CustomTooltip />}
-                cursor={{ fill: "rgba(209, 213, 219, 0.25)" }}
+                cursor={{ fill: "rgba(232, 212, 139, 0.12)" }}
               />
               {STACK_ORDER.map((language, index) => (
                 <Bar
@@ -239,7 +239,7 @@ export default function GenreLanguageChart() {
         </div>
       </div>
 
-      <p className="mt-0 text-center text-sm text-gray-500">Genre</p>
+      <p className="mt-0 text-center text-sm text-[#a6a6a6]">Genre</p>
     </div>
   );
 }

@@ -135,6 +135,41 @@ const series = [
 
 type SeriesKey = (typeof series)[number]["key"];
 
+function LineChartTooltip({
+  active,
+  label,
+  payload,
+}: {
+  active?: boolean;
+  label?: number | string;
+  payload?: Array<{ name?: string; value?: number; color?: string }>;
+}) {
+  if (!active || !payload?.length) {
+    return null;
+  }
+
+  return (
+    <div className="rounded-lg border border-[#c9a84c]/25 bg-[#111111]/95 px-3 py-3 text-sm shadow-[0_12px_30px_rgba(0,0,0,0.45)] backdrop-blur-sm">
+      <p className="mb-2 font-medium text-[#f5e6c8]">{label}</p>
+      <div className="space-y-1">
+        {payload.map((entry) => (
+          <div
+            key={entry.name}
+            className="flex items-center justify-between gap-4"
+          >
+            <span className="font-medium" style={{ color: entry.color }}>
+              {entry.name}
+            </span>
+            <span className="tabular-nums text-[#d2d2d2]">
+              {entry.value ?? 0}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function LanguageProductionLineChart() {
   const [hidden, setHidden] = useState<Set<SeriesKey>>(new Set());
 
@@ -151,8 +186,8 @@ export default function LanguageProductionLineChart() {
   }
 
   return (
-    <div className="bg-white rounded-lg p-6">
-      <h3 className="text-xl font-bold text-gray-800 mb-2 text-center">
+    <div className="rounded-lg border border-[#c9a84c]/12 bg-[#141414] p-6 shadow-[0_0_30px_rgba(0,0,0,0.24)]">
+      <h3 className="mb-2 text-center text-xl font-bold text-[#f5e6c8]">
         Non-English Film Production Per Year by Original Language (1920-2017)
       </h3>
       <div className="flex flex-wrap justify-center gap-2 mb-5">
@@ -165,11 +200,11 @@ export default function LanguageProductionLineChart() {
               onClick={() => toggleSeries(item.key)}
               className={`rounded-full border px-3 py-1 text-sm transition-colors ${
                 isHidden
-                  ? "border-gray-300 text-gray-400 bg-white"
-                  : "text-gray-800 bg-gray-50"
+                  ? "border-[#4a4a4a] bg-[#101010] text-[#777]"
+                  : "bg-[#1a1a1a] text-[#e5dcc8]"
               }`}
               style={{
-                borderColor: isHidden ? "#d1d5db" : item.color,
+                borderColor: isHidden ? "#4a4a4a" : item.color,
               }}
             >
               <span
@@ -187,10 +222,15 @@ export default function LanguageProductionLineChart() {
           data={data}
           margin={{ top: 10, right: 30, left: 20, bottom: 20 }}
         >
-          <CartesianGrid strokeDasharray="3 3" stroke="#d9d9d9" />
+          <CartesianGrid
+            strokeDasharray="3 3"
+            stroke="rgba(232, 212, 139, 0.14)"
+          />
           <XAxis
             dataKey="year"
-            tick={{ fontSize: 12, fill: "#333" }}
+            tick={{ fontSize: 12, fill: "#d4c4a0" }}
+            tickLine={{ stroke: "rgba(201, 168, 76, 0.35)" }}
+            axisLine={{ stroke: "rgba(201, 168, 76, 0.35)" }}
             minTickGap={0}
             interval={0}
             tickFormatter={(value) =>
@@ -200,15 +240,20 @@ export default function LanguageProductionLineChart() {
             }
           />
           <YAxis
-            tick={{ fontSize: 12, fill: "#333" }}
+            tick={{ fontSize: 12, fill: "#d4c4a0" }}
+            tickLine={{ stroke: "rgba(201, 168, 76, 0.35)" }}
+            axisLine={{ stroke: "rgba(201, 168, 76, 0.35)" }}
             label={{
               value: "Number of Films",
               angle: -90,
               position: "insideLeft",
-              style: { fontSize: 13, fill: "#333" },
+              style: { fontSize: 13, fill: "#e8d48b" },
             }}
           />
-          <Tooltip />
+          <Tooltip
+            content={<LineChartTooltip />}
+            cursor={{ stroke: "rgba(232, 212, 139, 0.35)", strokeDasharray: "3 3" }}
+          />
           {series.map((item) => (
             <Line
               key={item.key}
@@ -223,7 +268,7 @@ export default function LanguageProductionLineChart() {
           ))}
         </LineChart>
       </ResponsiveContainer>
-      <p className="mt-2 text-center text-sm text-gray-500">Release Year</p>
+      <p className="mt-2 text-center text-sm text-[#a6a6a6]">Release Year</p>
     </div>
   );
 }

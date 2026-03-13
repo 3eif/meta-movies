@@ -37,14 +37,14 @@ export default function RatingsCommercialSuccessPage() {
       </section>
 
       <section className="mb-16">
-        <div className="mb-6">
+        <div className="mb-6 rounded-lg border border-[#c9a84c]/12 bg-[#0c0c0c] p-6 shadow-[0_0_30px_rgba(0,0,0,0.24)]">
           <Image
             src="/charts/ratings-revenue-correlation.png"
             alt="Line and bubble chart showing Pearson correlation between vote average and log revenue by decade, with larger circles representing more films."
             width={2536}
             height={1572}
             unoptimized
-            className="w-full h-auto rounded-lg"
+            className="h-auto w-full rounded-lg"
           />
         </div>
         <p className="text-[#ccc] page-copy">
@@ -56,9 +56,9 @@ export default function RatingsCommercialSuccessPage() {
           visualization indicates that the relationship between revenue and
           ratings was strongest in the 1970s and 1980s, suggesting that higher
           rated films at the time were more closely associated with higher
-          revenue during that period. The correlation steadily declines from
-          the 1990s and on, reaching the lowest correlation in the 2000s and
-          2010s. Overall, the chart suggests that while film quality once had a
+          revenue during that period. The correlation steadily declines from the
+          1990s and on, reaching the lowest correlation in the 2000s and 2010s.
+          Overall, the chart suggests that while film quality once had a
           stronger association with financial success, the relationship has
           weakened over the decades as other factors such as marketing and
           globalization have become increasingly important in determining box
@@ -92,12 +92,12 @@ export default function RatingsCommercialSuccessPage() {
         <p>
           Our analysis began with film data from the 1960s. By examining the
           correlation between average IMDB vote scores and revenue, we found
-          that from 1960 through the 1980s, audience ratings strongly
-          correlated with revenue earned. In the 1960s, the Pearson correlation
-          coefficient between ratings and revenue was approximately r=0.15
-          (n=148). This relationship strengthened in the following decades,
-          rising to around r=0.24 (n=250) in the 1970s and eventually r=0.28
-          (n=870) in the 1980s.
+          that from 1960 through the 1980s, audience ratings strongly correlated
+          with revenue earned. In the 1960s, the Pearson correlation coefficient
+          between ratings and revenue was approximately r=0.15 (n=148). This
+          relationship strengthened in the following decades, rising to around
+          r=0.24 (n=250) in the 1970s and eventually r=0.28 (n=870) in the
+          1980s.
         </p>
         <p>
           These values indicate a positive relationship during this period when
@@ -118,14 +118,14 @@ export default function RatingsCommercialSuccessPage() {
           Modern Era (1990s-2010s): Evolving Relationships
         </h2>
         <p>
-          Following the 1980s, the correlation between ratings and revenue
-          began to steadily decrease. In the 1990s, the relationship dropped to
+          Following the 1980s, the correlation between ratings and revenue began
+          to steadily decrease. In the 1990s, the relationship dropped to
           approximately r=0.18 (n=1,253), indicating that while higher-rated
           films still tended to perform somewhat better financially, the
           relationship was noticeably weaker than in previous decades. This
           trend continued into the 2000s, where the correlation fell to roughly
-          r=0.10 (n=2,097), and declined slightly further in the 2010s to
-          around r=0.08 (n=2,069).
+          r=0.10 (n=2,097), and declined slightly further in the 2010s to around
+          r=0.08 (n=2,069).
         </p>
         <p>
           Although the relationship remains positive, the declining correlation
@@ -183,15 +183,15 @@ export default function RatingsCommercialSuccessPage() {
           emphasize that filmmaking is both a creative and business-driven
           process, where factors such as financing, marketing campaigns, and
           distribution access significantly influence a film&rsquo;s reach and
-          profitability. Palsson et al. (2012) show that the content rating of
-          a film (G, PG, PG-13, or R) can also strongly affect box office
-          performance, because it determines the size of the potential
-          audience. Their study finds that films that narrowly avoid receiving
-          an R rating earn significantly higher revenues than comparable films
-          that receive the stricter rating. This suggests that studios may
-          strategically adjust film content or marketing in order to secure
-          ratings that allow them to reach larger audiences, regardless of how
-          that decision may be interpreted by audiences.
+          profitability. Palsson et al. (2012) show that the content rating of a
+          film (G, PG, PG-13, or R) can also strongly affect box office
+          performance, because it determines the size of the potential audience.
+          Their study finds that films that narrowly avoid receiving an R rating
+          earn significantly higher revenues than comparable films that receive
+          the stricter rating. This suggests that studios may strategically
+          adjust film content or marketing in order to secure ratings that allow
+          them to reach larger audiences, regardless of how that decision may be
+          interpreted by audiences.
         </p>
         <p>
           All of these findings suggest that modern studios are prioritizing
@@ -218,17 +218,17 @@ export default function RatingsCommercialSuccessPage() {
           interests, even if the ratings do not reflect a high quality. In
           earlier decades, audiences had fewer ways to discover films, so
           ratings and word-of-mouth had a much stronger influence on whether
-          people went to the theater to see a movie. Finally, studies such as
-          Hu (2025) have found that public evaluations do not always match
-          critic ratings. The findings show that high critic ratings often
-          correlate with high revenue, but audience ratings do not always.
-          Culturally diverse films in particular receive lower critic ratings
-          and yet maintain successful box office performances. This diversion
-          highlights how audience perspectives and cultural experiences can
-          shape reception in ways that differ from professional criticism. It
-          also suggests that audiences are increasingly seeking representation
-          and relatable narratives, even when these films are not evaluated as
-          highly by critics.
+          people went to the theater to see a movie. Finally, studies such as Hu
+          (2025) have found that public evaluations do not always match critic
+          ratings. The findings show that high critic ratings often correlate
+          with high revenue, but audience ratings do not always. Culturally
+          diverse films in particular receive lower critic ratings and yet
+          maintain successful box office performances. This diversion highlights
+          how audience perspectives and cultural experiences can shape reception
+          in ways that differ from professional criticism. It also suggests that
+          audiences are increasingly seeking representation and relatable
+          narratives, even when these films are not evaluated as highly by
+          critics.
         </p>
       </section>
     </div>
