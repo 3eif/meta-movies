@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import AnalysisPager from "./AnalysisPager";
 import { BUSINESS_OF_FILM_ENTRY_ID } from "../bibliography/entryIds";
 
 export default function AnalysisOverviewPage() {
@@ -239,6 +240,11 @@ export default function AnalysisOverviewPage() {
           </p>
         </section>
       </section>
+
+      <AnalysisPager
+        href="/analysis/ratings-commercial-success"
+        label="Ratings & Commercial Success"
+      />
     </div>
   );
 }

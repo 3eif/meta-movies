@@ -1,5 +1,6 @@
 import LanguageProductionLineChart from "../LanguageProductionLineChart";
 import TableauMapEmbed from "../TableauMapEmbed";
+import AnalysisPager from "../AnalysisPager";
 
 export default function LanguageCountryGenrePage() {
   return (
@@ -132,6 +133,11 @@ export default function LanguageCountryGenrePage() {
           events, and competition from other media landscapes.
         </p>
       </section>
+
+      <AnalysisPager
+        href="/analysis/conclusion"
+        label="Conclusion"
+      />
     </div>
   );
 }

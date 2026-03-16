@@ -1,4 +1,6 @@
 import Image from "next/image";
+
+import AnalysisPager from "../AnalysisPager";
 import BudgetRevenueScatterChart from "../BudgetRevenueScatterChart";
 
 export default function RatingsCommercialSuccessPage() {
@@ -231,6 +233,11 @@ export default function RatingsCommercialSuccessPage() {
           critics.
         </p>
       </section>
+
+      <AnalysisPager
+        href="/analysis/production-choices"
+        label="Genres Across Languages"
+      />
     </div>
   );
 }

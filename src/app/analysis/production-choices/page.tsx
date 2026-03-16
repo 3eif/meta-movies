@@ -1,4 +1,5 @@
 import GenreLanguageChart from "../../text-analysis/GenreLanguageChart";
+import AnalysisPager from "../AnalysisPager";
 
 export default function ProductionChoicesPage() {
   return (
@@ -77,6 +78,11 @@ export default function ProductionChoicesPage() {
           common genre trends shared across global film production.
         </p>
       </section>
+
+      <AnalysisPager
+        href="/analysis/language-country-genre"
+        label="Language, Country, & Genre"
+      />
     </div>
   );
 }

@@ -1,3 +1,5 @@
+import AnalysisPager from "../AnalysisPager";
+
 export default function ConclusionPage() {
   return (
     <div className="max-w-6xl mx-auto px-6 py-16">
@@ -159,6 +161,8 @@ export default function ConclusionPage() {
           industry forces, marketing strategies, and cultural values that shape
           the power of film today.
         </p>
+
+        <AnalysisPager href="/data-critique" label="Data Critique" />
       </div>
     </div>
   );
