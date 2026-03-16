@@ -70,7 +70,7 @@ export default function LanguageCountryGenrePage() {
       </section>
 
       <section className="mb-16">
-        <div className="rounded-lg bg-[#2f3136] p-4 md:p-6 mb-6 overflow-hidden">
+        <div className="mb-6 overflow-hidden rounded-lg border border-[#c9a84c]/12 bg-[#2f3136] p-4 shadow-[0_0_30px_rgba(0,0,0,0.24)] md:p-6">
           <TableauMapEmbed />
         </div>
       </section>
