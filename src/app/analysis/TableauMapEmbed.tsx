@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 
 const EMBED_HTML = `
-  <div class="tableauPlaceholder" id="viz1773690996135" style="position: relative">
+  <div class="tableauPlaceholder" id="viz1773693772657" style="position: relative; background-color: black;">
     <noscript>
       <a href="#"><img alt="Global Film Production by Country" src="https://public.tableau.com/static/images/Fi/FilmProductionbyCountry/Dashboard1/1_rss.png" style="border: none" /></a>
     </noscript>
@@ -28,7 +28,7 @@ const EMBED_HTML = `
 
 export default function TableauMapEmbed() {
   useEffect(() => {
-    const divElement = document.getElementById("viz1773690996135");
+    const divElement = document.getElementById("viz1773693772657");
     if (!divElement) return;
 
     const vizElement = divElement.getElementsByTagName("object")[0];
